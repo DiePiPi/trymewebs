@@ -19,3 +19,9 @@ def home(request):
     return render(request, 'home.html', {
         'post_list': post_list,
     })
+
+def post_detail(request, pk):
+    post = Post.objects.get(pk=pk)
+    return render(request, 'post.html', {'post': post})
+
+

@@ -1,3 +1,17 @@
 <!-- home.html -->
 
-{{ post_list }}
+{% for post in post_list %}
+    <div>
+    <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> <br>
+    {{ post.created_at|date:"Y / m / d" }} <br>
+    {% if post.photo %}
+    <div class="thumbnail">
+        <img src="{{ post.photo }}" alt="">
+    </div>
+    {% else %}
+    <div class="thumbnail thumbnail-default"></div>
+    {% endif %}
+    {{ post.content }}<br>
+    <br>
+    </div>
+{% endfor %}

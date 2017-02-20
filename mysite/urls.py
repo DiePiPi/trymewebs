@@ -20,6 +20,7 @@ from tryme.views import *
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^hello/$', hello_world),
+    url(r'^post/(?P<pk>\d+)/$', post_detail, name='post_detail'),
     url(r'^$', home), #input nothing
     url(r'.*', nothing_here), #other url will be guided here
 ]
