@@ -6,7 +6,6 @@ chardet==2.3.0
 configglue==1.1.2
 configobj==5.0.6
 cryptography==1.2.3
-dirspec==13.10
 Django==1.10.5
 duplicity==0.7.6
 ecdsa==0.13
