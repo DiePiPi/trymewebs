@@ -1,12 +1,26 @@
 <!-- home.html -->
+{{ post_list }}
+
+<head>
+<style>
+div.allposts{
+    width: 400px;
+    margin: auto;
+    
+}
+</style>
+</head>
+<div class="allposts">
 
 {% for post in post_list %}
     <div>
-    <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> <br>
+    <a href="{% url 'post_detail' pk=post.pk %}"><font size="6" color="black"> {{ post.title }} </font></a> <br>
     {{ post.created_at|date:"Y / m / d" }} <br>
     {% if post.photo %}
     <div class="thumbnail">
-        <img src="{{ post.photo }}" alt="">
+        <a href="{% url 'post_detail' pk=post.pk %}">
+            <img src="{{ post.photo }}" alt="" width="300px">
+        </a>
     </div>
     {% else %}
     <div class="thumbnail thumbnail-default"></div>
@@ -15,3 +29,5 @@
     <br>
     </div>
 {% endfor %}
+
+</div>

@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>  
+<html>
+<head>
+</head>
+<body>
+{% if form == "START" %} 
+  {% if yourname %}
+    {{ yourname }}
+  {% else %}
+    <form action="/classform/" method="post">
+
+      {% csrf_token %}
+      {{ formn }}
+      <input type="submit" value="Submit" />
+    </form>
+  {% endif %}
+
+{% else %}
+  <form action="/your-name/" method="post">
+
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+  </form>
+{% endif %}
+</body>

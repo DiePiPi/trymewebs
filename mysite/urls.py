@@ -17,10 +17,18 @@ from django.contrib import admin
 # Import view functions from trips app.
 from tryme.views import *
 
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^hello/$', hello_world),
     url(r'^post/(?P<pk>\d+)/$', post_detail, name='post_detail'),
+    url(r'^testforms/', testforms),
+    url(r'^addapost/', addapost),
+    url(r'^your-name/', get_name),
+    url(r'^classform/', ClassFormView.as_view()),
     url(r'^$', home), #input nothing
     url(r'.*', nothing_here), #other url will be guided here
 ]
+
+
+
